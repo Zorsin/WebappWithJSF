@@ -1,0 +1,22 @@
+# Gradle build results, gradle cache
+build/
+.gradle/
+
+# Android specific files
+/local.properties
+
+# Ignore top level log files and directories
+*.log
+logs/
+
+# IntelliJ specific files
+.idea/
+*.iml
+out/
+components/etc/
+
+# Eclipse specific files
+bin/
+.settings/
+.classpath
+.project
