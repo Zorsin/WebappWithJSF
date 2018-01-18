@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: zorsin
+  Date: 15.01.2018
+  Time: 20:19
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://java.sun.com/jsf/composite">
+<!--<link rel="stylesheet" href="WEB-INF/css/w3.css"/>-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+<h:head>
+    <title>This is the WelcomeFile</title>
+</h:head>
+
+<h:body>
+    <div class="w3-container w3-teal">
+        <h2>Input Form</h2>
+    </div>
+    <!--<h:form class="w3-container">-->
+        <!--<label class="w3-text-teal"><b>First Name</b></label>-->
+        <!--<input class="w3-input w3-border w3-light-grey" type="text"/>-->
+
+        <!--<label class="w3-text-teal"><b>Last Name</b></label>-->
+        <!--<input class="w3-input w3-border w3-light-grey" type="text"/>-->
+
+        <!--<h:button value="Register" class="w3-btn w3-blue-grey"/>-->
+    <!--</h:form>-->
+    <h:form>
+        <h:outputLabel  >Search Param</h:outputLabel>
+        <h:inputText value="#{personBean.searchParam}"/>
+        <h:commandButton action="dataview" value="View Next Page"/>
+        <h:commandButton actionListener="#{personBean.getPersonsVisible}" value="View Data"/>
+    </h:form>
+
+    <h:panelGroup id="table-wrapper">
+        <h:dataTable styleClass="w3-table w3-striped" rendered="#{personBean.visibile}" value="#{personBean.persons}" var="person">
+            <h:column headerClass="w3-text-blue w3-black"><f:facet name="header">Fistname</f:facet>#{person.firstname}</h:column>
+            <h:column headerClass="w3-text-blue w3-black"><f:facet name="header">Lastname</f:facet>#{person.lastname}</h:column>
+            <h:column headerClass="w3-text-blue w3-black"><f:facet name="header">EmailAdress</f:facet>#{person.emailAddress}</h:column>
+        </h:dataTable>
+    </h:panelGroup>
+
+</h:body>
+
+</html>
