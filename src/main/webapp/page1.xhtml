@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+
+<h:body>
+    <div class="w3-container">
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+            <h:form>
+                <!--<h:commandLink styleClass="w3-button w3-bar-item" action="page1" value="Switch to Page1"/>-->
+                <h:panelGroup binding="#{sidenavigationBean.buttonPlaceHolder}"/>
+            </h:form>
+        </div>
+    </div>
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+        <div class="w3-container">
+            <h1><h:outputLabel value="Hello, Page1"/></h1>
+        </div>
+    </div>
+    <div class="w3-container">
+        <div class="w3-card w3-teal">
+            <h:form>
+                <h:inputText styleClass="w3-input"/>
+                <h:commandButton styleClass="w3-button"/>
+            </h:form>
+        </div>
+    </div>
+
+    <script type="application/javascript">
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</h:body>
+</html>
